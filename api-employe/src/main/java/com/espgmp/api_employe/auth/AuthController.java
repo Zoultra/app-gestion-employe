@@ -10,6 +10,7 @@ import com.espgmp.api_employe.model.Utilisateur;
 @RestController
 
 @RequiredArgsConstructor
+@RequestMapping("/employe-api/auth")
 public class AuthController { 
 
     private final AuthenticationManager authManager;

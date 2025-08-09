@@ -32,10 +32,10 @@ public class Utilisateur {
 	    @Column(nullable = false)
 	    private String password;
 	    
-	    @Column(unique = true)
+	    @Column(nullable = false)
 	    private String email;
 	    
-	    @Column(nullable = false, unique = true)
+	    @Column(nullable = false)
 	    private String telephone;
 	    
 	    @ManyToOne

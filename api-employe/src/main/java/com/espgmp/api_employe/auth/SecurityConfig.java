@@ -44,7 +44,7 @@ public class SecurityConfig {
                 		 
                 		 
                         .requestMatchers("/employe-api/auth/**").permitAll()
-                       // .requestMatchers("/ghotel-api/auth/login/**").permitAll()
+                       // .requestMatchers("/employe-api/auth/login/**").permitAll()
                         .requestMatchers("/employe-api/utilisateurs").permitAll()
                         .requestMatchers("/employe-api/employes/**").permitAll()
                         .requestMatchers("/employe-api/roles/**").permitAll()
@@ -63,7 +63,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://localhost:4200")); // ou .addAllowedOrigin("*")
+        configuration.setAllowedOrigins(List.of("http://localhost:8080")); // ou .addAllowedOrigin("*")
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type"));
         configuration.setAllowCredentials(true); // important si tu utilises les cookies
@@ -72,6 +72,9 @@ public class SecurityConfig {
         source.registerCorsConfiguration("/**", configuration);
         return source;
     }
+    
+    
+  
     
     
 }
