@@ -1,0 +1,48 @@
+<div class="form-container">
+  <h2>Ajouter un employé</h2>
+
+  <form [formGroup]="employeForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+      <label>Nom :</label>
+      <input formControlName="nom" />
+      <div *ngIf="employeForm.get('nom')?.invalid && employeForm.get('nom')?.touched" style="color:red; font-size:0.9rem;">
+        Nom requis
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Prénom :</label>
+      <input formControlName="prenom" />
+      <div *ngIf="employeForm.get('prenom')?.invalid && employeForm.get('prenom')?.touched" style="color:red; font-size:0.9rem;">
+        Prénom requis
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Poste :</label>
+      <input formControlName="poste" />
+      <div *ngIf="employeForm.get('poste')?.invalid && employeForm.get('poste')?.touched" style="color:red; font-size:0.9rem;">
+        Poste requis
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Email :</label>
+      <input formControlName="email" />
+      <div *ngIf="employeForm.get('email')?.invalid && employeForm.get('email')?.touched" style="color:red; font-size:0.9rem;">
+        Email invalide
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Date d'embauche :</label>
+      <input type="date" formControlName="dateEmbauche" />
+      <div *ngIf="employeForm.get('dateEmbauche')?.invalid && employeForm.get('dateEmbauche')?.touched" style="color:red; font-size:0.9rem;">
+        Date requise
+      </div>
+    </div>
+
+    <button type="submit">Ajouter</button>
+  </form>
+</div>

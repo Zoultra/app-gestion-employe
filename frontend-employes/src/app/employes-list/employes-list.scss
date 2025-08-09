@@ -1,0 +1,48 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #f4f4f4;
+  text-align: left;
+}
+
+
+.btn-modifier {
+  background-color: #28a745; /* vert */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin: 8px 16px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-modifier:hover {
+  background-color: #218838;
+}
+
+.btn-supprimer {
+  background-color: #dc3545; /* rouge */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-supprimer:hover {
+  background-color: #c82333;
+}
+ 

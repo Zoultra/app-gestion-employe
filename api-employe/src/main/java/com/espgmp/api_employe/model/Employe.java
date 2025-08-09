@@ -30,7 +30,7 @@ public class Employe {
     @Column(nullable = false)
     private String poste;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String email;
 
     @Column(name = "date_embauche", nullable = false)

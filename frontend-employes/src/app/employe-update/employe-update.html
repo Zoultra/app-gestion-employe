@@ -1,0 +1,50 @@
+<div class="form-container">
+  <h2>Modifier un employé</h2>
+
+  <form [formGroup]="employeForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+      <label>Nom :</label>
+      <input formControlName="nom" />
+      <small *ngIf="employeForm.get('nom')?.invalid && employeForm.get('nom')?.touched">
+        Nom requis
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label>Prénom :</label>
+      <input formControlName="prenom" />
+      <small *ngIf="employeForm.get('prenom')?.invalid && employeForm.get('prenom')?.touched">
+        Prénom requis
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label>Poste :</label>
+      <input formControlName="poste" />
+      <small *ngIf="employeForm.get('poste')?.invalid && employeForm.get('poste')?.touched">
+        Poste requis
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label>Email :</label>
+      <input formControlName="email" />
+      <small *ngIf="employeForm.get('email')?.invalid && employeForm.get('email')?.touched">
+        Email invalide
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label>Date d'embauche :</label>
+      <input type="date" formControlName="dateEmbauche" />
+      <small *ngIf="employeForm.get('dateEmbauche')?.invalid && employeForm.get('dateEmbauche')?.touched">
+        Date requise
+      </small>
+    </div>
+
+    <button type="submit" [disabled]="employeForm.invalid">
+      Mettre à jour
+    </button>
+  </form>
+</div>
