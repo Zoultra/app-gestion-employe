@@ -3,6 +3,7 @@ import { Employe } from '../models/employe';
 import { EmployeService } from '../services/employe.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth/auth.service';
 
 @Component({
   selector: 'app-employes-list',
@@ -19,7 +20,7 @@ export class EmployesList {
    employes: Employe[] = [];
   errorMsg: string = '';
 
-  constructor(private employeService: EmployeService, private router: Router) {}
+  constructor(private employeService: EmployeService, private router: Router,private authService: AuthService ) {}
 
   ngOnInit(): void {
     this.loadEmployes();
@@ -43,5 +44,37 @@ export class EmployesList {
       });
     }
   }
+
+
+
+  
+   menuOpen = false;
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
+  }
+
+   goToList() {  
+    this.router.navigate(['/employes']);   
+  }
+
+   goToHome() {  
+    this.router.navigate(['/']);   
+  }
+
+   goToAddEmploye() {  
+    this.router.navigate(['/employes/add']);   
+  }
+
+   handleLogout() {
+      
+      this.authService.logout();
+     
+
+          }
 
 }

@@ -1,0 +1,49 @@
+Création des TABLES
+
+ Table Employes
+
+CREATE TABLE employes (
+  id SERIAL PRIMARY KEY,
+  nom VARCHAR(100) NOT NULL,
+  prenom VARCHAR(100) NOT NULL,
+  poste VARCHAR(100),
+  email VARCHAR(150) UNIQUE NOT NULL,
+  date_embauche DATE NOT NULL
+);
+
+
+-- Table des rôles
+
+
+CREATE TABLE role (
+    id SERIAL PRIMARY KEY,
+    nomrole VARCHAR(50) NOT NULL UNIQUE
+);
+
+-- Table des utilisateurs
+CREATE TABLE utilisateurs (
+    id SERIAL PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    prenom VARCHAR(100) NOT NULL,
+    username VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    telephone VARCHAR(20) NOT NULL,
+    role_id INTEGER NOT NULL,
+    CONSTRAINT fk_role
+      FOREIGN KEY (role_id)
+      REFERENCES role (id)
+      ON DELETE RESTRICT
+);
+
+
+
+-- Insertion d'un rôle admin
+INSERT INTO role (nomrole) VALUES ('ADMIN');
+
+
+-- Insertion d'un utilisateur avec le rôle admin
+ 
+INSERT INTO utilisateurs (nom, prenom, username, password, email, telephone, role_id)
+VALUES ('TRAORE', 'ZOUMANA', 'zou', 'motdepasse', 'zou@example.com', '0123456789',
+    (SELECT id FROM role WHERE nomrole = 'ADMIN'));

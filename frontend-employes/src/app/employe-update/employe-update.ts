@@ -52,7 +52,7 @@ if (id) {
   onSubmit(): void {
     if (this.employeForm.valid) {
       this.employeService.updateEmploye(this.employeId, this.employeForm.value as any).subscribe(() => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/employes']);
       });
     }
   }
