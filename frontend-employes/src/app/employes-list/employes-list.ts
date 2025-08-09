@@ -63,7 +63,7 @@ export class EmployesList {
   }
 
    goToHome() {  
-    this.router.navigate(['/']);   
+    this.router.navigate(['/employes']);   
   }
 
    goToAddEmploye() {  

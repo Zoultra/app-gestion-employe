@@ -1,7 +1,7 @@
 <nav class="navbar">
   <button class="nav-toggle" aria-label="Toggle navigation" (click)="toggleMenu()">☰</button>
   <ul [class.open]="menuOpen" class="nav-links">
-    <li><a routerLink="" routerLinkActive="active" class="nice-bouton" (click)="goToHome()">Accueil</a></li>
+    <li><a routerLink="employes" routerLinkActive="active" class="nice-bouton" (click)="goToHome()">Accueil</a></li>
     <li><a routerLink="employes" routerLinkActive="active"  class="nice-bouton" (click)="goToList()">Liste Employés</a></li>
     <li><a routerLink="employes" routerLinkActive="active"  class="nice-bouton" (click)="goToAddEmploye()">Ajouter Employé</a></li>
    <li><a routerLink="employes" routerLinkActive="active"  class="nice-bouton" (click)="handleLogout()">Deconnexion</a></li>

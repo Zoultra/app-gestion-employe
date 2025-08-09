@@ -13,6 +13,7 @@ export const routes: Routes = [
   { path: 'home', component: Home },
   { path: 'employes/update/:id', component: EmployeUpdate },
   { path: 'employes', component: EmployesList },
+  { path: 'employes/add', component: EmployeAdd },
   { path: '**', redirectTo: 'login' }
 ];
 
